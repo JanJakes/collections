@@ -384,7 +384,7 @@ class ArrayCollection implements Collection, Selectable
         if ($expr) {
             $visitor  = new ClosureExpressionVisitor();
             $filter   = $visitor->dispatch($expr);
-            $filtered = array_filter($filtered, $filter);
+            $filtered = array_values(array_filter($filtered, $filter));
         }
 
         $orderings = $criteria->getOrderings();
